@@ -15,6 +15,22 @@
             text-align: justify;
             text-justify: inter-word;
         }
+
+        c1 {
+            color: lightskyblue;
+        }
+
+        c2 {
+            color: lightpink;
+        }
+
+        c3 {
+            color: lightsalmon;
+        }
+
+        c4 {
+            color: lightgreen;
+        }
     </style>
 
 </head>
@@ -49,13 +65,69 @@
                 </p>
                 <h2><code><b>Git Config</b></code></h2>
                 <p>El comando <code><b>git config</b></code> obtiene y establece variables de configuración que
-                    controlan el aspecto y funcionamiento de Git.</p>
-                <p>
-                <pre><code id="code1">git config --global user.name "Tomas Sanders"</code></pre>
-                <div align="right" style="margin-top: -48px; margin-right: 10px;">
-                    <code><a id="code1a" href="javascript:void(0);" onclick="copyToClipboard('#code1','#code1a')"style="color: white;">Copy</a></code>
-                </div>
+                    controlan el aspecto y funcionamiento de Git.
                 </p>
+                <div align="left">
+                    <h3><code><b>--list</b></code></h3>
+                    <p>El flag <code><b>--list</b></code> o <code><b>-l</b></code> en su version abreviada.
+                        Enumere todas las variables establecidas en el archivo de configuración, junto con sus valores.
+                    </p>
+                    <pre><code class="plaintext" id="code1">git <c1>config</c1> <c2>--list</c2></code></pre>
+                    <div align="right" style="margin-top: -48px; margin-right: 10px;">
+                        <code><a id="code1a" href="javascript:void(0);" onclick="copyToClipboard('#code1','#code1a')"style="color: white;">Copy</a></code>
+                    </div>
+                    <br>
+                    <pre><code class="plaintext" id="code2">git <c1>config</c1> <c2>-l</c2></code></pre>
+                    <div align="right" style="margin-top: -48px; margin-right: 10px;">
+                        <code><a id="code2a" href="javascript:void(0);" onclick="copyToClipboard('#code2','#code2a')"style="color: white;">Copy</a></code>
+                    </div>
+                    <br>
+                    <h3><b>Obtener valor de configuración</b></h3>
+                    <p>
+                        Para obtener un valor en especifico del archivo de configuracion, debemos utilizar
+                        <code><b>git config</b></code>
+                        seguido del atributo que deseamos obtener.
+                    </p>
+                    <pre><code class="plaintext" id="code3">git <c1>config</c1> <c3>user.name</c3></code></pre>
+                    <div align="right" style="margin-top: -48px; margin-right: 10px;">
+                        <code><a id="code3a" href="javascript:void(0);" onclick="copyToClipboard('#code3','#code3a')"style="color: white;">Copy</a></code>
+                    </div>
+                    <br>
+                    <pre><code class="plaintext" id="code4">git <c1>config</c1> <c3>user.email</c3></code></pre>
+                    <div align="right" style="margin-top: -48px; margin-right: 10px;">
+                        <code><a id="code4a" href="javascript:void(0);" onclick="copyToClipboard('#code4','#code4a')"style="color: white;">Copy</a></code>
+                    </div>
+                    <br>
+                    <h3><b>Establecer valor de configuración</b></h3>
+                    <p>
+                        Para establecer algun valor en especifico del archivo de configuracion, debemos utilizar
+                        <code><b>git config</b></code>
+                        seguido del atibuto y el valor a establecer.
+                    </p>
+                    <pre><code class="plaintext" id="code5">git <c1>config</c1> <c3>user.name</c3> <c4>"Tomas Sanders"</c4></code></pre>
+                    <div align="right" style="margin-top: -48px; margin-right: 10px;">
+                        <code><a id="code5a" href="javascript:void(0);" onclick="copyToClipboard('#code5','#code5a')"style="color: white;">Copy</a></code>
+                    </div>
+                    <br>
+                    <pre><code class="plaintext" id="code6">git <c1>config</c1> <c3>user.email</c3> <c4>"myemail@mail.com"</c4></code></pre>
+                    <div align="right" style="margin-top: -48px; margin-right: 10px;">
+                        <code><a id="code6a" href="javascript:void(0);" onclick="copyToClipboard('#code6','#code6a')"style="color: white;">Copy</a></code>
+                    </div>
+                </div>
+                <br>
+                <h2><code><b>Git Init</b></code></h2>
+                <p>El comando <code><b>git init</b></code> crea un repositorio Git vacío o reinicialisa uno
+                    existente. Este comando crea un repositorio Git vacío, básicamente un directorio .git
+                    con subdirectorios para objetos, referencias / cabezas, referencias / etiquetas
+                    y archivos de plantilla.
+                    También se crea un archivo HEAD inicial que hace referencia al HEAD de la rama maestra.
+                </p>
+                <pre><code class="plaintext" id="code7" align="left">git <c1>init</c1></code></pre>
+                <div align="right" style="margin-top: -48px; margin-right: 10px;">
+                    <code><a id="code7a" href="javascript:void(0);" onclick="copyToClipboard('#code7','#code7a')"style="color: white;">Copy</a></code>
+                </div>
+            </div>
+            <div class="col-md-8 mx-auto" align="left">
 
             </div>
         </div>
@@ -63,7 +135,7 @@
 </body>
 <script>
     hljs.initHighlightingOnLoad();
-    function copyToClipboard(element,a) {
+    function copyToClipboard(element, a) {
         var $temp = $("<input>");
         $("body").append($temp);
         $temp.val($(element).text()).select();
@@ -71,7 +143,7 @@
         $temp.remove();
         if ($(a).text() == 'Copy') {
             $(a).text('Copied');
-        }else{
+        } else {
             $(a).text('Copy');
         }
     }
